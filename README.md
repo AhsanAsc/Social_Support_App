@@ -88,7 +88,7 @@ Streamlit UI  →  FastAPI Backend  →  LangGraph Agent Orchestrator
 | Frontend | Streamlit |
 | Agent Orchestration | LangGraph |
 | Local AI Runtime | Ollama (GPU enabled) |
-| Embeddings | BAAI/bge-small-en-v1.5 (Sentence Transformers) |
+| Embeddings | all-MiniLM-L6-v2 (Sentence Transformers) |
 | Vector DB | Qdrant |
 | Relational DB | PostgreSQL |
 | NoSQL DB | MongoDB |
@@ -124,7 +124,7 @@ Streamlit UI  →  FastAPI Backend  →  LangGraph Agent Orchestrator
 | Component | Runtime | Hardware |
 |-----------|---------|----------|
 | Ollama LLM Inference | ✅ GPU | NVIDIA RTX 3050 4GB |
-| Embedding Model (BAAI/bge-small-en-v1.5) | ✅ CPU | Light embedding model |
+| Embedding Model (all-MiniLM-L6-v2) | ✅ CPU | Light embedding model |
 | OCR (PDF/Image Parsing) | ✅ CPU | Fast processing |
 | ML Classifier | ✅ CPU | Scikit-learn |
 | LangGraph Agents | ✅ CPU | Orchestration |
