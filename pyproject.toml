@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "social-support-ai"
+version = "0.0.1"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.8",
+    "httpx>=0.27",
+    "streamlit>=1.38",
+    "qdrant-client>=1.9",
+    "pymongo>=4.7",
+    "psycopg2-binary>=2.9",
+    "sentence-transformers>=3.0",
+    "langfuse>=2.43",
+    "python-dotenv>=1.0",
+    "python-multipart>=0.0.9",
+    "pdfplumber>=0.11.4",
+    "pymongo>=4.7",
+    "pillow>=10.0",
+    "pytesseract>=0.3.10",
+    "pandas>=2.2",
+    "openpyxl>=3.1",
+    "numpy>=1.26",
+    "tqdm>=4.66",
+    "python-jose[cryptography]>=3.3",
+    "passlib[bcrypt]>=1.7",
+    "slowapi>=0.1.9",
+    "langgraph>=0.2.36",
+    "langchain-core>=0.2.34",
+    "scikit-learn>=1.4",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "black>=24.8",
+    "isort>=5.13",
+    "mypy>=1.11",
+    "pytest>=8.3",
+    "pytest-asyncio>=0.23",
+    "bandit>=1.7",
+    "pre-commit>=3.7",
+    "python-multipart>=0.0.9"
+]
+
+# Fix for package discovery - explicitly tell setuptools what to include
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["apps*", "services*"]
+exclude = ["infra*", "eval*", "docs*", "scripts*", ".venv*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E", "F", "I",
+  "B",
+  "UP",
+  "N",
+]
+ignore = ["E203"]
+
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+no_implicit_optional = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+pythonpath = ["apps", "services"]
