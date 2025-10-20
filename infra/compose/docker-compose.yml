@@ -106,8 +106,8 @@ services:
       MAX_UPLOAD_MB: "25"
       CORS_ALLOW_ORIGINS: "http://localhost:8501"
       QDRANT_URL: "http://qdrant:6333"
-      LANGFUSE_PUBLIC_KEY: "pk-lf-f84d4976-9bc9-4e93-a863-04bc357acd9e"
-      LANGFUSE_SECRET_KEY: "sk-lf-98f53722-0968-4e33-8dae-1a7fbef511d8"
+      LANGFUSE_PUBLIC_KEY: ""
+      LANGFUSE_SECRET_KEY: ""
       LANGFUSE_HOST: http://langfuse:3000
       MODEL_DIR: /data/models
     volumes:
